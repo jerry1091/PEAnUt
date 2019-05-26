@@ -1,0 +1,46 @@
+<div id="Shell-23" class="Roku-Nav-Header-Internal">
+    <div data-reactroot="" role="header">
+        <div class="Roku-Internal-Header">
+            <div class="roku-internal-header">
+                <div class="default container"><a href="{{ url_for('main.home') }}" class="roku-logo">Roku</a>
+                    <div class="app-logo"><a href="{{ url_for('main.home') }}" class=" appname">App Name</a>
+                    </div>
+                    {% if current_user.is_authenticated %}
+                    <div class="user-menu">
+                        <div class="user-menu-dropdown">
+                            <div class="user_menu_box">
+                                <div class="row">
+                                    <div class="user-greeting col-sm-8 col-xs-12">
+                                        <span class="user-mobile-menu glyphicon glyphicon-cog welcome">Welcome</span>
+                                        <br><span class="user-name">{{ current_user.username }}</span>
+                                    </div>
+                                    <div class="col-sm-4 user-greeting-arrow-down">
+                                        <span class="glyphicon glyphicon-arrow-down-after"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-menu-content"><a href="{{ url_for('users.logout') }}">Sign out</a></div>
+                        </div>
+                    </div>
+                        {% else %}
+                            <div class="user-menu">
+                                <a href="{{ url_for('users.login') }}">
+                                    <div class="user_menu_box">
+                                        <div class="login-btn user-menu-btn">Login</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "nav_top.html" ignore missing %}
+
+
+
+
+
+

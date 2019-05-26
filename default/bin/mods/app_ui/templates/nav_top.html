@@ -1,0 +1,10 @@
+<div class="centered tabs"><ul class="tabs-navigation-bar">
+    <li class="">
+        <span {% if request.path == "/graph" %}class="active"{% endif %}><a href="{{url_for('main.home')}}">DEA AWS Graph</a></span></li>
+    <li class="">
+        <span {% if request.path == "/infra" %}class="active"{% endif %}><a href="{{url_for('main.home')}}">DEA INFRA RECORDS</a></span></li>
+    <li class="">
+        <span {% if request.path == "/billing" %}class="active"{% endif %}><a href="{{url_for('main.home')}}">DEA AWS Billing</a></span></li>
+    <li class="">
+        <span {% if request.path == "/about" %}class="active"{% endif %}><a href="/about">About</a></span></li></ul>
+</div>

@@ -1,0 +1,60 @@
+
+                <ul class="nav nav-sidebar metismenu" data-nav-type="accordion">
+
+                    <!-- Main -->
+                    <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link {% if title == 'Home' %} active {% endif %}">
+                            <i class="icon-home4"></i>
+                            <span>
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="/blogs" class="nav-link {% if title == 'Blogs' %} active {% endif %}">
+                            <i class="icon-newspaper"></i>
+                            <span>
+                                Blog Posts
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/datatables" class="nav-link {% if title == 'Datatables' %} active {% endif %}">
+                            <i class="icon-table2"></i>
+                            <span>
+                                Datatables
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                    <li class="nav-item nav-item-submenu">
+                        <a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Themes</span></a>
+
+                        <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                            <li class="nav-item"><a href="/theme?theme=roku_ks" class="nav-link active">Default</a></li>
+                            <li class="nav-item"><a href="/theme?theme=flaskblog" class="nav-link">FlaskBlog</a></li>
+                            <li class="nav-item"><a href="/theme?theme=limitless" class="nav-link active">Limitless</a></li>
+                            <li class="nav-item"><a href="/theme?theme=srtdash" class="nav-link">SRTdash</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link {% if title == 'About' %} active {% endif %}">
+                            <i class="icon-shield-notice"></i>
+                            <span>
+                                About
+                            </span>
+                        </a>
+                    </li>
+
+                    <!-- /main -->
+
+
+
+                </ul>
