@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% else %}
+<meta name="description" content="PEAnUt UI">
+{% endif %}
+
+
+    {% if title %}
+    <title>PEAnUt- {{ title }}</title>
+{% else %}
+    <title>PEAnUt</title>
+{% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://www.roku.com/favicon.ico">
+
+    <link href="{{ url_for('static', filename='assets/bootstrap4/js/bootstrap.css'') }}" rel="stylesheet">
+
+    <script src="{{ url_for('static', filename='assets/bootstrap4/js/bootstrap.bundle.js')  }}"></script>
+
+</head>
+
+
+<body>
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <a href="index.html">PEAnUt</a>
+                    </div>
+                </div>
+                <div class="main-menu">
+                    <div class="menu-inner">
+                        <nav>        
+                            {% include 'main_sidebar.html' ignore missing %}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar menu area end -->
+
+        <!-- main content area start -->                            
+         <div class="main-content">                           
+            <!-- header area start -->
+
+
+
+
+{% include 'main_navbar.html' ignore missing %}
+
+
+            <div class="main-content-inner">
+                                <div class="row">
+            {% block content %}{% endblock content%}
+
+
+   </div>
+            </div>     </div>
+        <!-- main content area end -->
+        <!-- footer area start-->
+        <footer>
+            <div class="footer-area">
+                <p>© Copyright 2018. All right reserved.</p>
+            </div>
+        </footer>
+        <!-- footer area end-->
+    </div>
+    <!-- page container area end -->
+
+
+{% block scripts %}{% endblock scripts%}
+</body>
+
+</html>
+
+                            
+                            
+                            
+                            
+                            
+                            
+           
